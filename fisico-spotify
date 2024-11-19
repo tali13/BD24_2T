@@ -1,0 +1,270 @@
+/* Lógico_1: */
+
+CREATE TABLE Usuario (
+    Id_Usuario Number(10) PRIMARY KEY,
+    Nome_Usuario CHAR(80),
+    Numero_de_cllr Number(10),
+    Email_Usuario CHAR(80)
+);
+
+CREATE TABLE Conteudo (
+    Id_Conteudo CHAR(20) PRIMARY KEY,
+    Nome_conteudo CHAR(10)
+);
+
+CREATE TABLE Musica (
+    Nome_Musica CHAR(20),
+    Ano_Data_lancamento CHAR(10),
+    ID_Musica Number(10) PRIMARY KEY
+);
+
+CREATE TABLE Playlist (
+    Id_Playlist Number(10),
+    Nome_playlist CHAR(20),
+    Data_playlist Number(10),
+    fk_Biblioteca_ID_biblioteca Number(10),
+    PRIMARY KEY (Id_Playlist, fk_Biblioteca_ID_biblioteca)
+);
+
+CREATE TABLE Artista (
+    ID_artista Number(10),
+    Nome_artista CHAR(20),
+    fk_Biblioteca_ID_biblioteca Number(10),
+    PRIMARY KEY (ID_artista, fk_Biblioteca_ID_biblioteca)
+);
+
+CREATE TABLE Biblioteca (
+    ID_biblioteca Number(10) PRIMARY KEY,
+    Nome_biblioteca CHAR(20),
+    lista CHAR(10)
+);
+
+CREATE TABLE Album (
+    Nome_album CHAR(10),
+    Id_album Number(10),
+    fk_Biblioteca_ID_biblioteca Number(10),
+    PRIMARY KEY (Id_album, fk_Biblioteca_ID_biblioteca)
+);
+
+CREATE TABLE Genero_tem (
+    ID_Genero Number(10) PRIMARY KEY,
+    Nome_genero CHAR(10),
+    Tipo CHAR(80),
+    fk_Musica_ID_Musica Number(10),
+    fk_Biblioteca_ID_biblioteca Number(10)
+);
+
+CREATE TABLE Esacuta (
+    fk_Usuario_Id_Usuario Number(10),
+    fk_Musica_ID_Musica Number(10)
+);
+
+CREATE TABLE Tem (
+    fk_Musica_ID_Musica Number(10),
+    fk_Conteudo_Id_Conteudo CHAR(20)
+);
+
+CREATE TABLE Tem (
+    fk_Musica_ID_Musica Number(10),
+    fk_Biblioteca_ID_biblioteca Number(10)
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+
+CREATE TABLE Tabela_1 (
+);
+ 
+ALTER TABLE Playlist ADD CONSTRAINT FK_Playlist_2
+    FOREIGN KEY (fk_Biblioteca_ID_biblioteca)
+    REFERENCES Biblioteca (ID_biblioteca)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Artista ADD CONSTRAINT FK_Artista_2
+    FOREIGN KEY (fk_Biblioteca_ID_biblioteca)
+    REFERENCES Biblioteca (ID_biblioteca)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Album ADD CONSTRAINT FK_Album_2
+    FOREIGN KEY (fk_Biblioteca_ID_biblioteca)
+    REFERENCES Biblioteca (ID_biblioteca)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Genero_tem ADD CONSTRAINT FK_Genero_tem_2
+    FOREIGN KEY (fk_Musica_ID_Musica)
+    REFERENCES Musica (ID_Musica);
+ 
+ALTER TABLE Genero_tem ADD CONSTRAINT FK_Genero_tem_3
+    FOREIGN KEY (fk_Biblioteca_ID_biblioteca)
+    REFERENCES Biblioteca (ID_biblioteca);
+ 
+ALTER TABLE Esacuta ADD CONSTRAINT FK_Esacuta_1
+    FOREIGN KEY (fk_Usuario_Id_Usuario)
+    REFERENCES Usuario (Id_Usuario)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Esacuta ADD CONSTRAINT FK_Esacuta_2
+    FOREIGN KEY (fk_Musica_ID_Musica)
+    REFERENCES Musica (ID_Musica)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Tem ADD CONSTRAINT FK_Tem_1
+    FOREIGN KEY (fk_Musica_ID_Musica)
+    REFERENCES Musica (ID_Musica)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Tem ADD CONSTRAINT FK_Tem_2
+    FOREIGN KEY (fk_Conteudo_Id_Conteudo)
+    REFERENCES Conteudo (Id_Conteudo)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Tem ADD CONSTRAINT FK_Tem_1
+    FOREIGN KEY (fk_Musica_ID_Musica)
+    REFERENCES Musica (ID_Musica)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Tem ADD CONSTRAINT FK_Tem_2
+    FOREIGN KEY (fk_Biblioteca_ID_biblioteca)
+    REFERENCES Biblioteca (ID_biblioteca)
+    ON DELETE RESTRICT;

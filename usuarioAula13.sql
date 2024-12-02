@@ -42,20 +42,20 @@ values(1,'bola','bola colorida',15.00,13),
 
 
 select distinct cliente from 
-alter cliente add genero varchar(20)
-alter cliente add salario money
-alter cliente add cpf varchar(20)
+alter table cliente add genero varchar(20)
+alter table cliente add salario money
+alter table cliente add cpf varchar(20)
 
 
 
 
 update cliente set genero = 'masculino'
 
-update cliente set genero='femenino' where id_cliente=3
+update cliente set genero='feminino' where id_cliente=6
 
-update cliente set salario= 9000
+update cliente set salario= '9000'
 
-update cliente set cpf=295.524.857.44
+update cliente set cpf='295.524.857.44'
 
 update cliente set salario='femenino' where id_cliente=3
 
@@ -70,7 +70,7 @@ select nome_cliente,cpf from cliente where genero='femenino'
 
 
 
-SELECT * FROM cliente ORDER BY nome_cliente ASC
+SELECT nome_cliente FROM cliente ORDER BY nome_cliente desc
 
 
 

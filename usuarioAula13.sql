@@ -76,6 +76,22 @@ SELECT nome_cliente FROM cliente ORDER BY nome_cliente desc
 
 
 
+select distinct nome_cliente from cliente
+select nome_client,cpf from cliente
+select nome_cliente,cpf from cliente where genero='femenino'
+SELECT nome_cliente FROM cliente ORDER BY nome_cliente desc
+
+select count (*)as numerosClientes from cliente
+select sobre_nome_cliente as sobrenome,nome_cliente from cliente
+
+select count (*) from cliente
+where salario >'1000'
+select count (*) as quantidade_cliente from cliente
+where genero = 'femenino'
+
+
+
+
 
 	
 

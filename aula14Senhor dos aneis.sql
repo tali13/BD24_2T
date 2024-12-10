@@ -81,3 +81,17 @@ from cenario,coletado
 join coletado
 on cenario.id_cenario=coletado.fk_personagem
 
+select id_personagem,id_cenario
+from personagem
+join cenario
+on personagem.id_personagem=cenario.id_cenario
+
+select * from cenario
+select * from item
+
+
+select id_item,id_cenario
+from item
+join cenario
+on item.id_item=cenario.id_cenario
+
